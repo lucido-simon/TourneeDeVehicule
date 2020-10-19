@@ -57,91 +57,6 @@ public final class HelloJGraphT
         System.out.println(stringGraph.toString());
         System.out.println();
 
-
-        // create a graph based on URI objects
-        Graph<URI, DefaultEdge> hrefGraph = createHrefGraph();
-
-        // find the vertex corresponding to www.jgrapht.org
-        URI start = hrefGraph
-                .vertexSet().stream().filter(uri -> uri.getHost().equals("www.jgrapht.org")).findAny()
-                .get();
-
-
-        // perform a graph traversal starting from that vertex
-        System.out.println("-- traverseHrefGraph output");
-        traverseHrefGraph(hrefGraph, start);
-        System.out.println();
-
-        System.out.println("-- renderHrefGraph output");
-        renderHrefGraph(hrefGraph);
-        System.out.println();
-    }
-
-    /**
-     * Creates a toy directed graph based on URI objects that represents link structure.
-     *
-     * @return a graph based on URI objects.
-     */
-    private static Graph<URI, DefaultEdge> createHrefGraph()
-            throws URISyntaxException
-    {
-
-        Graph<URI, DefaultEdge> g = new DefaultDirectedGraph<>(DefaultEdge.class);
-
-        URI google = new URI("http://www.google.com");
-        URI wikipedia = new URI("http://www.wikipedia.org");
-        URI jgrapht = new URI("http://www.jgrapht.org");
-
-        // add the vertices
-        g.addVertex(google);
-        g.addVertex(wikipedia);
-        g.addVertex(jgrapht);
-
-        // add edges to create linking structure
-        g.addEdge(jgrapht, wikipedia);
-        g.addEdge(google, jgrapht);
-        g.addEdge(google, wikipedia);
-        g.addEdge(wikipedia, google);
-
-
-        return g;
-    }
-
-    /**
-     * Traverse a graph in depth-first order and print the vertices.
-     *
-     * @param hrefGraph a graph based on URI objects
-     *
-     * @param start the vertex where the traversal should start
-     */
-    private static void traverseHrefGraph(Graph<URI, DefaultEdge> hrefGraph, URI start)
-    {
-        Iterator<URI> iterator = new DepthFirstIterator<>(hrefGraph, start);
-        while (iterator.hasNext()) {
-            URI uri = iterator.next();
-            System.out.println(uri);
-        }
-    }
-
-    /**
-     * Render a graph in DOT format.
-     *
-     * @param hrefGraph a graph based on URI objects
-     */
-    private static void renderHrefGraph(Graph<URI, DefaultEdge> hrefGraph)
-            throws ExportException
-    {
-
-        DOTExporter<URI, DefaultEdge> exporter =
-                new DOTExporter<>(v -> v.getHost().replace('.', '_'));
-        exporter.setVertexAttributeProvider((v) -> {
-            Map<String, Attribute> map = new LinkedHashMap<>();
-            map.put("label", DefaultAttribute.createAttribute(v.toString()));
-            return map;
-        });
-        Writer writer = new StringWriter();
-        exporter.exportGraph(hrefGraph, writer);
-        System.out.println(writer.toString());
     }
 
     /**
@@ -171,5 +86,22 @@ public final class HelloJGraphT
         g.addEdge(v4, v1);
 
         return g;
+    }
+
+    private static Graph<String, DefaultWeightedEdge> createWeightedStringGraph()
+    {
+        Graph<String, DefaultWeightedEdge> g = new SimpleWeightedGraph<>(DefaultWeightedEdge.class);
+
+        String mtp = "Montpellier";
+        String paris = "Paris";
+        String lyon = "Lyon";
+        String marseille = "Marseille";
+
+        g.addVertex(mtp);
+        g.addVertex(paris);
+        g.addVertex(lyon);
+        g.addVertex(marseille);
+
+        g.addEdge()
     }
 }
