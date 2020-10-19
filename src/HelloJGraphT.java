@@ -40,15 +40,9 @@ public final class HelloJGraphT
     {
     } // ensure non-instantiability.
 
-    /**
-     * The starting point for the demo.
-     *
-     * @param args ignored.
-     *
-     * @throws URISyntaxException if invalid URI is constructed.
-     * @throws ExportException if graph cannot be exported.
-     */
-    public static void main(String[] args) throws URISyntaxException, ExportException {
+
+    public static void main(String[] args) throws URISyntaxException, ExportException
+    {
         Graph<String, DefaultWeightedEdge> stringWeightedGraph = createWeightedStringGraph();
 
         System.out.println("-- toString output");
@@ -61,11 +55,7 @@ public final class HelloJGraphT
 
     }
 
-    /**
-     * Create a toy graph based on String objects.
-     *
-     * @return a graph based on String objects.
-     */
+
     private static Graph<String, DefaultEdge> createStringGraph()
     {
         Graph<String, DefaultEdge> g = new SimpleGraph<>(DefaultEdge.class);
@@ -94,19 +84,24 @@ public final class HelloJGraphT
     {
         Graph<String, DefaultWeightedEdge> g = new SimpleWeightedGraph<>(DefaultWeightedEdge.class);
 
-        String mtp = "Montpellier";
-        String paris = "Paris";
-        String lyon = "Lyon";
-        String marseille = "Marseille";
 
-        g.addVertex(mtp);
-        g.addVertex(paris);
-        g.addVertex(lyon);
-        g.addVertex(marseille);
+        g.addVertex("a");
+        g.addVertex("b");
+        g.addVertex("c");
+        g.addVertex("d");
+        g.addVertex("e");
 
-        g.addEdge(mtp, paris);
+        g.addEdge("a", "b");
+        g.addEdge("a", "e");
+        g.addEdge("b", "c");
+        g.addEdge("c", "e");
+        g.addEdge("b", "d");
+        g.addEdge("e", "d");
 
-        g.setEdgeWeight(mtp, paris, 4);
+        g.setEdgeWeight("e", "d", 2.d);
+        g.setEdgeWeight("e", "c", 2.d);
+        g.setEdgeWeight("e", "a", 8.d);
+
 
         return g;
     }
