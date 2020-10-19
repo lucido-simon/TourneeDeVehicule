@@ -17,10 +17,12 @@
  */
 
 import org.jgrapht.*;
+import org.jgrapht.alg.interfaces.SpanningTreeAlgorithm;
 import org.jgrapht.graph.*;
 import org.jgrapht.nio.*;
 import org.jgrapht.nio.dot.*;
 import org.jgrapht.traverse.*;
+import org.jgrapht.alg.spanning.*;
 
 import java.io.*;
 import java.net.*;
@@ -46,16 +48,16 @@ public final class HelloJGraphT
      * @throws URISyntaxException if invalid URI is constructed.
      * @throws ExportException if graph cannot be exported.
      */
-    public static void main(String[] args)
-            throws URISyntaxException,
-            ExportException
-    {
-        Graph<String, DefaultEdge> stringGraph = createStringGraph();
+    public static void main(String[] args) throws URISyntaxException, ExportException {
+        Graph<String, DefaultWeightedEdge> stringWeightedGraph = createWeightedStringGraph();
 
-        // note undirected edges are printed as: {<v1>,<v2>}
         System.out.println("-- toString output");
-        System.out.println(stringGraph.toString());
+        System.out.println(stringWeightedGraph.toString());
         System.out.println();
+
+        PrimMinimumSpanningTree<String, DefaultWeightedEdge> tree = new PrimMinimumSpanningTree<>(stringWeightedGraph);
+        SpanningTreeAlgorithm.SpanningTree<DefaultWeightedEdge> tree2 = tree.getSpanningTree();
+        System.out.println(tree2.toString());
 
     }
 
@@ -102,6 +104,10 @@ public final class HelloJGraphT
         g.addVertex(lyon);
         g.addVertex(marseille);
 
-        g.addEdge()
+        g.addEdge(mtp, paris);
+
+        g.setEdgeWeight(mtp, paris, 4);
+
+        return g;
     }
 }
