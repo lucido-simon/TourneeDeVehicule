@@ -21,8 +21,8 @@ public class Start {
 		
 		if(args[1].equals("sweep"))
 		{
-			String output = VRPProgram.sweep();
-			System.err.println(output);
+			//String output = VRPProgram.sweep();
+			//System.err.println(output);
 		}
 
 		else

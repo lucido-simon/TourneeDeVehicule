@@ -1,11 +1,13 @@
 package algorithms.ClarkAndWright.model;
 
+import common.Vertex.BasicVertex;
+
 public class Saving implements Comparable<Saving>{
 	public double val;
-	public Node from;
-	public Node to;
+	public BasicVertex from;
+	public BasicVertex to;
 	
-	public Saving(double v,Node f,Node t){
+	public Saving(double v, BasicVertex f, BasicVertex t){
 		val = v;
 		from = f;
 		to = t;
