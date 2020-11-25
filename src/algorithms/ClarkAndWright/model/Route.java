@@ -21,7 +21,7 @@ public class Route
 
     public Route(int nodesNumber)
     {
-        edges = new ArrayList<BasicEdge>();
+        edges = new ArrayList<>();
 
         nodes = new int[nodesNumber];
         inEdges = new BasicEdge[nodesNumber];
@@ -85,9 +85,10 @@ public class Route
         int successorI = this.successor(from);
         int successorJ = r2.successor(to);
 
-        //moznost jedna
-        //hrana smeruje z uzlu ze, ktereho v prvni Route se vracime zpatky do uzlu 0
-        //v druhe route je naopak predecessor uzlu J sklad = 0
+        // option one
+        // the edge goes from node ze, of which in the first Route we return back to node 0
+        // in the second route, on the other hand, the predecessor of node J is warehouse = 0
+
         if (successorI == 0 && predecessorJ == 0)
         {
             this.removeEdgeToNode(0);
@@ -99,10 +100,10 @@ public class Route
             this.actual += r2.actual;
             this.add(mergingEdge);
             return true;
-            // moznost dva
-            //hrana jde jakoby v protismeru
-            //uzel i je v prvni route druhy hned za skladem
-            //musime otocit hranu
+            // option two
+            // the edge goes in the opposite direction
+            // node i is in the first route of the type just behind the stock
+            // we have to turn the edge
         } else if (successorJ == 0 && predecessorI == 0)
         {
             mergingEdge.reverse();

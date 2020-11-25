@@ -5,22 +5,10 @@ import common.Edge.BasicEdge;
 
 import java.util.ArrayList;
 
-public class BasicVertex implements Comparable<BasicVertex>
-
+public class BasicVertex
 {
     public int index;
     public Route route;
-
-
-    public int cluster;
-    public double x;
-    public double y;
-    public double angle;
-
-    public int state;
-    public boolean visited;
-
-    public ArrayList<BasicEdge> mstEdges;
 
     public String add;
 
@@ -63,19 +51,4 @@ public class BasicVertex implements Comparable<BasicVertex>
         return (o instanceof BasicVertex) && (toString().equals(o.toString()));
     }
 
-
-    @Override
-    public int compareTo(BasicVertex o)
-    {
-        if (this.angle < o.angle)
-        {
-            return -1;
-        } else if (o.angle == this.angle)
-        {
-            return 0;
-        } else
-        {
-            return 1;
-        }
-    }
 }

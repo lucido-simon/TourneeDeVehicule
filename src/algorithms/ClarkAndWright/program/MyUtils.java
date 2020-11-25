@@ -9,35 +9,6 @@ import java.util.ArrayList;
 public class MyUtils
 {
 
-    public static int[][] randomMatrix(int n)
-    {
-        int[][] random = new int[n][n];
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-                if (i != j)
-                {
-                    random[i][j] = (int) (100 * Math.random());
-                } else
-                {
-                    random[i][i] = 0;
-                }
-            }
-        }
-        return random;
-    }
-
-    public static int[] randomAmounts(int n)
-    {
-        int[] amounts = new int[n];
-        for (int i = 1; i < n; i++)
-        {
-            amounts[i] = (int) (100 * Math.random());
-        }
-        return amounts;
-    }
-
     public static void printSaving(Saving s)
     {
         int from = s.from.index;
@@ -135,80 +106,5 @@ public class MyUtils
         }
 
         System.out.println("Total cost of the routes: " + totalCost);
-    }
-
-    public static double compClusterCost(Cluster cl, double distances[][])
-    {
-        double cost = 0;
-        for (int i = 0; i < cl.tsp.size() - 1; i++)
-        {
-            BasicVertex n = cl.tsp.get(i);
-            BasicVertex n1 = cl.tsp.get(i + 1);
-
-            cost += distances[n.index][n1.index];
-        }
-        return cost;
-    }
-
-    public static String generateRandomNodes(int count, int distanceMultConst, int amountConst)
-    {
-
-        BasicVertex[] nodes = new BasicVertex[count];
-        int[][] distances = new int[count][count];
-
-        for (int i = 0; i < count; i++)
-        {
-            int x = (int) (Math.random() * distanceMultConst);
-            int y = (int) (Math.random() * distanceMultConst);
-            for (int j = 0; j < i; j++)
-            {
-                BasicVertex n = nodes[j];
-                int dist = (int) Math.sqrt((x - n.x) * (x - n.x) + (y - n.y) * (y - n.y));
-                distances[i][n.index] = dist;
-                distances[n.index][i] = dist;
-            }
-            BasicVertex newNode = new BasicVertex(i);
-            newNode.x = x;
-            newNode.y = y;
-            newNode.add = "N" + i;
-            newNode.amount = (int) (Math.random() * amountConst);
-            nodes[i] = newNode;
-        }
-        //vypisu
-        StringBuilder sb = new StringBuilder();
-
-        sb.append(count);
-        for (int i = 0; i < count; i++)
-        {
-            sb.append("\r\n");
-            for (int j = 0; j < count; j++)
-            {
-                if (i == j)
-                {
-                    sb.append(0);
-                } else
-                {
-                    if (distances[i][j] != 0)
-                    {
-                        sb.append(distances[i][j]);
-                    } else
-                    {
-                        sb.append(distances[j][i]);
-                    }
-                }
-                sb.append(" ");
-            }
-        }
-
-        sb.append("\r\n");
-        sb.append("\r\n");
-
-        for (int i = 0; i < nodes.length; i++)
-        {
-            sb.append(nodes[i].amount + ";" + nodes[i].add + ";" + nodes[i].x + ";" + nodes[i].y);
-            sb.append("\r\n");
-        }
-
-        return sb.toString();
     }
 }

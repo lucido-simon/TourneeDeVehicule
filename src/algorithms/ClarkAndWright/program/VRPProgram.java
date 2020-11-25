@@ -3,7 +3,6 @@ package algorithms.ClarkAndWright.program;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import algorithms.ClarkAndWright.model.Cluster;
 import algorithms.ClarkAndWright.model.Route;
 import algorithms.ClarkAndWright.model.Saving;
 import common.Edge.BasicEdge;
@@ -15,7 +14,7 @@ import org.jgrapht.graph.DefaultWeightedEdge;
 public class VRPProgram
 {
 
-    public static int CAR_LIMIT = 10;
+    public static int CAR_LIMIT = 3;
     private static double[][] savings;
     public static double[][] distances;
     private static BasicVertex[] nodes;
@@ -24,95 +23,6 @@ public class VRPProgram
     private static int nCount;
     private static int[] amounts;
 
-
-    public static ArrayList<BasicVertex> cluster()
-    {
-        BasicVertex depo = nodes[0];
-        ArrayList<BasicVertex> nodesList = new ArrayList<BasicVertex>();
-
-        for (int i = 1; i < nodes.length; i++)
-        {
-            BasicVertex n = nodes[i];
-            if (n.x >= depo.x)
-            {
-                if (n.y >= depo.y)
-                {
-                    n.cluster = 1;
-                } else
-                {
-                    n.cluster = 4;
-                }
-            } else
-            {
-                if (n.y >= depo.y)
-                {
-                    n.cluster = 2;
-                } else
-                {
-                    n.cluster = 3;
-                }
-            }
-
-
-            for (int j = 1; j < 5; j++)
-            {
-                if (n.cluster == j)
-                {
-                    double difx = Math.abs(n.x - depo.x);
-                    double dify = Math.abs(n.y - depo.y);
-
-                    if (dify != 0)
-                    {
-                        double tangA = (double) dify / difx;
-
-                        if (n.cluster == 2 || n.cluster == 4)
-                        {
-                            tangA = 1 / tangA;
-                        }
-                        n.angle += Math.atan(tangA);
-                    }
-
-                    break;
-                } else
-                {
-                    n.angle += Math.PI / 2;
-                }
-            }
-            nodesList.add(n);
-        }
-        return nodesList;
-    }
-
-    /**
-     * Load the data from external variables
-     *
-     * @param lNodes
-     * @param lCount
-     * @param lDistances
-     * @param lAmounts
-     * @param lAdds
-     * @param carLim
-     * @return
-     */
-    public static boolean loadData(BasicVertex[] lNodes, int lCount, double[][] lDistances, int[] lAmounts, String[] lAdds, int carLim)
-    {
-        boolean returnVal = true;
-
-        try
-        {
-            CAR_LIMIT = carLim;
-            nCount = lCount;
-            nodes = lNodes;
-            distances = lDistances;
-            amounts = lAmounts;
-            adds = lAdds;
-        } catch (Exception ex)
-        {
-            returnVal = false;
-        }
-
-        return returnVal;
-    }
 
     public static void loadDataBasic(Graph<BasicVertex, BasicEdge> g)
     {
@@ -185,92 +95,9 @@ public class VRPProgram
     }
 
 
-    /**
-     * Implementation of the Sweep algorithm
-     *
-     * @return
-     */
-    /*public static String sweep()
-    {
-        ArrayList<BasicVertex> nodesList = cluster();
-        Collections.sort(nodesList);
-
-        //Cluster
-        Cluster actualCluster = new Cluster();
-
-        ArrayList<Cluster> clusters = new ArrayList<Cluster>();
-
-        //pridam 0 do clusteru
-        actualCluster.add(nodes[0]);
-        for (int i = 0; i < nodesList.size(); i++)
-        {
-            BasicVertex n = nodesList.get(i);
-
-            //pokud by byla prekrocena kapacita vytvorim novy cluster
-            if (actualCluster.amount + n.amount > CAR_LIMIT)
-            {
-                clusters.add(actualCluster);
-                actualCluster = new Cluster();
-                //pridam depot uzel do kazdeho clusteru
-                actualCluster.add(nodes[0]);
-            }
-
-            //pridam uzel do clusteru
-            //pridam vsechny hrany ktere inciduji s uzly ktere jiz jsou v clusteru
-            actualCluster.add(n);
-            for (int j = 0; j < actualCluster.nodes.size(); j++)
-            {
-                BasicVertex nIn = actualCluster.nodes.get(j);
-                BasicEdge e = new BasicEdge(nIn, n, distances[nIn.index][n.index]);
-
-                BasicEdge eReverse = new BasicEdge(n, nIn, distances[n.index][nIn.index]);
-
-                actualCluster.edges.add(e);
-                actualCluster.edges.add(eReverse);
-            }
-
-            //v pripade posledni polozky musim pridat i cluster.
-            if (i == nodesList.size() - 1)
-            {
-                clusters.add(actualCluster);
-            }
-        }
-
-        int totalCost = 0;
-        int clusterCount = clusters.size();
-
-        StringBuilder sb = new StringBuilder();
-        sb.append(clusterCount + "\r\n");
-
-        for (int i = 0; i < clusterCount; i++)
-        {
-            //System.out.println("Cluster: " + clusters.get(i).amount);
-            clusters.get(i).mst();
-            //clusters.get(i).printMST();
-            clusters.get(i).dfsONMST();
-            clusters.get(i).printTSP(sb);
-            sb.append("");
-            sb.append("\r\n");
-            totalCost += MyUtils.compClusterCost(clusters.get(i), distances);
-        }
-
-        for (int i = 0; i < clusterCount; i++)
-        {
-            clusters.get(i).printTSPAdds(sb);
-            sb.append("\r\n");
-        }
-        sb.append("TOTAL COST OF THE ROUTES:" + totalCost);
-        return sb.toString();
-    }
-
-    /**
-     * Implementation of the Clarks' & Wright's algorithm
-     *
-     * @return
-     */
     public static String clarkWright()
     {
-        routes = new ArrayList<Route>();
+        routes = new ArrayList<>();
 
         //I create N nodes. Each node will be inserted into a route.
         //each route will contain 2 edges - from the depo to the edge and back
@@ -336,7 +163,9 @@ public class VRPProgram
                     {
                         routes.remove(r2);
                     }
-                } else
+                }
+
+                else
                 {
                     System.out.println("Problem");
                 }
