@@ -104,7 +104,8 @@ public class Route
             // the edge goes in the opposite direction
             // node i is in the first route of the type just behind the stock
             // we have to turn the edge
-        } else if (successorJ == 0 && predecessorI == 0)
+        }
+        else if (successorJ == 0 && predecessorI == 0)
         {
             mergingEdge.reverse();
             this.removeEdgeFromNode(0);

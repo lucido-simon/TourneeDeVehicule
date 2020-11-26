@@ -25,7 +25,7 @@ public class MyUtils
         }
     }
 
-    public static void printAdds(ArrayList<Route> routes, String[] adds, StringBuilder sb)
+    public static void printAdds(ArrayList<Route> routes, BasicVertex[] adds, StringBuilder sb)
     {
         int totalCost = 0;
         for (Route r : routes)
@@ -79,15 +79,15 @@ public class MyUtils
      * @param r
      * @param adds
      */
-    public static void printAdds(Route r, String[] adds, StringBuilder sb)
+    public static void printAdds(Route r, BasicVertex[] adds, StringBuilder sb)
     {
-        sb.append(adds[0]);
+        sb.append(adds[0].add);
         BasicEdge edge = r.outEdges[0];
-        sb.append(" -> " + adds[edge.n2.index]);
+        sb.append(" -> " + adds[edge.n2.index].add);
         do
         {
             edge = r.outEdges[edge.n2.index];
-            sb.append(" -> " + adds[edge.n2.index]);
+            sb.append(" -> " + adds[edge.n2.index].add);
         } while (edge.n2.index != 0);
     }
 

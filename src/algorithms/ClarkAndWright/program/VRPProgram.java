@@ -8,34 +8,28 @@ import algorithms.ClarkAndWright.model.Saving;
 import common.Edge.BasicEdge;
 import common.Vertex.BasicVertex;
 import org.jgrapht.Graph;
-import org.jgrapht.graph.DefaultWeightedEdge;
 
 
 public class VRPProgram
 {
 
-    public static int CAR_LIMIT = 3;
+    public static int CAR_LIMIT = 10;
     private static double[][] savings;
     public static double[][] distances;
-    private static BasicVertex[] nodes;
-    private static String[] adds;
+    private static BasicVertex[] vertices;
     private static ArrayList<Route> routes;
     private static int nCount;
-    private static int[] amounts;
-
 
     public static void loadDataBasic(Graph<BasicVertex, BasicEdge> g)
     {
         ArrayList<BasicVertex> vertices = new ArrayList<>(g.vertexSet());
-        nodes = vertices.toArray(new BasicVertex[g.vertexSet().size()]);
+        VRPProgram.vertices = vertices.toArray(new BasicVertex[g.vertexSet().size()]);
 
         ArrayList<BasicEdge> edges = new ArrayList<>(g.edgeSet());
 
 
         nCount = vertices.size();
 
-        amounts = new int[nCount];
-        adds = new String[nCount];
         distances = new double[nCount][nCount];
 
         for ( BasicEdge be : edges )
@@ -44,77 +38,30 @@ public class VRPProgram
             System.out.println(be.val);
         }
 
-        for ( BasicVertex bv : vertices)
-        {
-            adds[bv.index] = bv.add;
-        }
 
 
 
     }
-
-    public static void loadData(Graph<String, DefaultWeightedEdge> g)
-    {
-        ArrayList<String> vertices = new ArrayList<>();
-        vertices.addAll(g.vertexSet());
-        ArrayList<DefaultWeightedEdge> edges = new ArrayList<>();
-        edges.addAll(g.edgeSet());
-
-        nCount = vertices.size() - 1;
-
-
-        distances = new double[nCount][nCount];
-        for (int i = 0; i < nCount; i++)
-        {
-            for (int j = 0; j < nCount; j++) // fixme comment représenter des distances non existantes ?
-            {
-                if (i == j)
-                    distances[i][j] = 0;
-                else distances[i][j] = g.getEdgeWeight(g.getEdge(vertices.get(i), vertices.get(j)));
-            }
-        }
-
-
-        //the quantity of the ordered goods
-        //addresses and coordinates
-        amounts = new int[nCount];
-        nodes = new BasicVertex[nCount];
-        adds = new String[nCount];
-
-        for (int i = 0; i < nCount; i++)
-        {
-            BasicVertex n = new BasicVertex(i);
-            n.add = vertices.get(i);
-            n.amount = (int) (1 + Math.random() * 10);
-
-            adds[i] = vertices.get(i);
-            nodes[i] = n;
-
-        }
-
-    }
-
 
     public static String clarkWright()
     {
         routes = new ArrayList<>();
 
-        //I create N nodes. Each node will be inserted into a route.
+        //I create N vertices. Each node will be inserted into a route.
         //each route will contain 2 edges - from the depo to the edge and back
         for (int i = 0; i < nCount; i++)
         {
 
-            BasicVertex n = nodes[i];
+            BasicVertex n = vertices[i];
 
 
             if (i != 0)
             {
                 //creating the two edges
-                BasicEdge e = new BasicEdge(nodes[0], n, distances[0][n.index]);
-                BasicEdge e2 = new BasicEdge(n, nodes[0], distances[0][n.index]);
+                BasicEdge e = new BasicEdge(vertices[0], n, distances[0][n.index]);
+                BasicEdge e2 = new BasicEdge(n, vertices[0], distances[0][n.index]);
 
                 Route r = new Route(nCount);
-                //40 omezeni kamionu
                 r.allowed = CAR_LIMIT;
                 r.add(e);
                 r.add(e2);
@@ -127,7 +74,7 @@ public class VRPProgram
 
         MyUtils.printRoutes(routes);
         //Computing the savings - the values which made be saved by optimization
-        ArrayList<Saving> sList = computeSaving(distances, nCount, savings, nodes);
+        ArrayList<Saving> sList = computeSaving(distances, nCount, savings, vertices);
         //sorting the savings
         Collections.sort(sList);
 
@@ -181,7 +128,7 @@ public class VRPProgram
 
 
         MyUtils.printRoutesCities(routes, sb);
-        MyUtils.printAdds(routes, adds, sb);
+        MyUtils.printAdds(routes, vertices, sb);
         return sb.toString();
     }
 
