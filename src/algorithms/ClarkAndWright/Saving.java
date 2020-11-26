@@ -1,16 +1,16 @@
-package algorithms.ClarkAndWright.model;
+package algorithms.ClarkAndWright;
 
 import common.Vertex.BasicVertex;
 
 public class Saving implements Comparable<Saving>
 {
-    public double val;
+    public double cost;
     public BasicVertex from;
     public BasicVertex to;
 
     public Saving(double v, BasicVertex f, BasicVertex t)
     {
-        val = v;
+        cost = v;
         from = f;
         to = t;
     }
@@ -18,12 +18,12 @@ public class Saving implements Comparable<Saving>
     @Override
     public int compareTo(Saving o)
     {
-        if (o.val < this.val)
+        if (o.cost < this.cost)
         {
             return -1;
         }
 
-        else if (o.val == this.val)
+        else if (o.cost == this.cost)
         {
             return 0;
         }

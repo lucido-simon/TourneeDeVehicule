@@ -4,30 +4,30 @@ import common.Vertex.BasicVertex;
 
 public class BasicEdge implements Comparable<BasicEdge>
 {
-    public BasicVertex n1;
-    public BasicVertex n2;
+    public BasicVertex v1;
+    public BasicVertex v2;
 
-    public double val;
+    public double cost;
 
 
     public BasicEdge(BasicVertex ln1, BasicVertex ln2, double dist)
     {
-        this.n1 = ln1;
-        this.n2 = ln2;
-        this.val = dist;
+        this.v1 = ln1;
+        this.v2 = ln2;
+        this.cost = dist;
     }
 
     public void reverse()
     {
-        BasicVertex swap = this.n2;
-        this.n2 = n1;
-        this.n1 = swap;
+        BasicVertex swap = this.v2;
+        this.v2 = v1;
+        this.v1 = swap;
     }
 
     @Override
     public String toString()
     {
-        return n1.add + n2.add;
+        return v1.name + v2.name;
     }
 
     @Override
@@ -45,9 +45,9 @@ public class BasicEdge implements Comparable<BasicEdge>
     @Override
     public int compareTo(BasicEdge o)
     {
-        if (this.val < o.val)
+        if (this.cost < o.cost)
             return -1;
-        else if (o.val == this.val)
+        else if (o.cost == this.cost)
             return 0;
         else
             return 1;

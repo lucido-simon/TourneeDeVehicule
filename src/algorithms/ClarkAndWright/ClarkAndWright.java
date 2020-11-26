@@ -1,16 +1,15 @@
-package algorithms.ClarkAndWright.program;
+package algorithms.ClarkAndWright;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-import algorithms.ClarkAndWright.model.Route;
-import algorithms.ClarkAndWright.model.Saving;
+import common.Route.Route;
 import common.Edge.BasicEdge;
 import common.Vertex.BasicVertex;
 import org.jgrapht.Graph;
 
 
-public class VRPProgram
+public class ClarkAndWright
 {
 
     public static int CAR_LIMIT = 10;
@@ -18,28 +17,22 @@ public class VRPProgram
     public static double[][] distances;
     private static BasicVertex[] vertices;
     private static ArrayList<Route> routes;
-    private static int nCount;
 
     public static void loadDataBasic(Graph<BasicVertex, BasicEdge> g)
     {
         ArrayList<BasicVertex> vertices = new ArrayList<>(g.vertexSet());
-        VRPProgram.vertices = vertices.toArray(new BasicVertex[g.vertexSet().size()]);
+        ClarkAndWright.vertices = vertices.toArray(new BasicVertex[g.vertexSet().size()]);
 
         ArrayList<BasicEdge> edges = new ArrayList<>(g.edgeSet());
 
 
-        nCount = vertices.size();
-
-        distances = new double[nCount][nCount];
+        distances = new double[vertices.size()][vertices.size()];
 
         for ( BasicEdge be : edges )
         {
-            distances[be.n1.index][be.n2.index] = be.val;
-            System.out.println(be.val);
+            distances[be.v1.index][be.v2.index] = be.cost;
+            System.out.println(be.cost);
         }
-
-
-
 
     }
 
@@ -49,7 +42,7 @@ public class VRPProgram
 
         //I create N vertices. Each node will be inserted into a route.
         //each route will contain 2 edges - from the depo to the edge and back
-        for (int i = 0; i < nCount; i++)
+        for (int i = 0; i < vertices.length; i++)
         {
 
             BasicVertex n = vertices[i];
@@ -61,20 +54,20 @@ public class VRPProgram
                 BasicEdge e = new BasicEdge(vertices[0], n, distances[0][n.index]);
                 BasicEdge e2 = new BasicEdge(n, vertices[0], distances[0][n.index]);
 
-                Route r = new Route(nCount);
-                r.allowed = CAR_LIMIT;
+                Route r = new Route(vertices.length);
+                r.weightLimit = CAR_LIMIT;
                 r.add(e);
                 r.add(e2);
-                r.actual += n.amount;
+                r.currentWeight += n.weight;
 
                 routes.add(r);
             }
         }
 
 
-        MyUtils.printRoutes(routes);
+        ClarkAndWrightUtilities.printRoutes(routes);
         //Computing the savings - the values which made be saved by optimization
-        ArrayList<Saving> sList = computeSaving(distances, nCount, savings, vertices);
+        ArrayList<Saving> sList = computeSaving(distances, vertices.length, savings, vertices);
         //sorting the savings
         Collections.sort(sList);
 
@@ -92,12 +85,10 @@ public class VRPProgram
             int from = n1.index;
             int to = n2.index;
 
-            //MyUtils.printSaving(actualS);
+            //ClarkAndWrightUtilities.printSaving(actualS);
 
-            if (actualS.val > 0 && r1.actual + r2.actual < r1.allowed && !r1.equals(r2))
+            if (actualS.cost > 0 && r1.currentWeight + r2.currentWeight < r1.weightLimit && !r1.equals(r2))
             {
-
-                //moznozt jedna z uzlu do kteryho se de se de do cile
 
                 BasicEdge outgoingR2 = r2.outEdges[to];
                 BasicEdge incommingR1 = r1.inEdges[from];
@@ -120,15 +111,15 @@ public class VRPProgram
             }
 
             sList.remove(0);
-            //MyUtils.printRoutes(routes);
+            //ClarkAndWrightUtilities.printRoutes(routes);
 
         }
         StringBuilder sb = new StringBuilder();
         sb.append(routes.size() + "\r\n");
 
 
-        MyUtils.printRoutesCities(routes, sb);
-        MyUtils.printAdds(routes, vertices, sb);
+        ClarkAndWrightUtilities.printRoutesCities(routes, sb);
+        ClarkAndWrightUtilities.printNames(routes, vertices, sb);
         return sb.toString();
     }
 
@@ -145,7 +136,7 @@ public class VRPProgram
     public static ArrayList<Saving> computeSaving(double[][] dist, int n, double[][] sav, BasicVertex[] nodesField)
     {
         sav = new double[n][n];
-        ArrayList<Saving> sList = new ArrayList<Saving>();
+        ArrayList<Saving> sList = new ArrayList<>();
         for (int i = 1; i < n; i++)
         {
             for (int j = i + 1; j < n; j++)

@@ -1,83 +1,84 @@
-package algorithms.ClarkAndWright.model;
+package common.Route;
 
 import common.Edge.BasicEdge;
+import common.Vertex.BasicVertex;
 
 import java.util.ArrayList;
 
 public class Route
 {
 
-    public int allowed;
-    public int actual;
+    public int weightLimit;
+    public int currentWeight;
     public int totalCost;
 
 
-    public int[] nodes;
+    public BasicVertex[] nodes;
     public BasicEdge[] inEdges;
     public BasicEdge[] outEdges;
 
 
     ArrayList<BasicEdge> edges;
 
-    public Route(int nodesNumber)
+    public Route(int numberOfVertices)
     {
         edges = new ArrayList<>();
 
-        nodes = new int[nodesNumber];
-        inEdges = new BasicEdge[nodesNumber];
-        outEdges = new BasicEdge[nodesNumber];
+        nodes = new BasicVertex[numberOfVertices];
+        inEdges = new BasicEdge[numberOfVertices];
+        outEdges = new BasicEdge[numberOfVertices];
     }
 
     public void add(BasicEdge e)
     {
         edges.add(e);
 
-        outEdges[e.n1.index] = e;
-        inEdges[e.n2.index] = e;
+        outEdges[e.v1.index] = e;
+        inEdges[e.v2.index] = e;
 
-        e.n1.route = this;
-        e.n2.route = this;
+        e.v1.route = this;
+        e.v2.route = this;
 
-        totalCost += e.val;
+        totalCost += e.cost;
     }
 
-    public void removeEdgeToNode(int index)
+    public void removeEdgeToVertex(int index)
     {
         BasicEdge e = inEdges[index];
-        outEdges[e.n1.index] = null;
+        outEdges[e.v1.index] = null;
 
-        totalCost -= e.val;
+        totalCost -= e.cost;
 
         edges.remove(e);
         inEdges[index] = null;
     }
 
-    public void removeEdgeFromNode(int index)
+    public void removeEdgeFromVertex(int index)
     {
         BasicEdge e = outEdges[index];
-        inEdges[e.n2.index] = null;
+        inEdges[e.v2.index] = null;
 
-        totalCost -= e.val;
+        totalCost -= e.cost;
         edges.remove(e);
         outEdges[index] = null;
     }
 
-    public int predecessor(int nodeIndex)
+    public int predecessor(int vertexIndex)
     {
-        return inEdges[nodeIndex].n1.index;
+        return inEdges[vertexIndex].v1.index;
     }
 
 
-    public int successor(int nodeIndex)
+    public int successor(int vertexIndex)
     {
-        return outEdges[nodeIndex].n2.index;
+        return outEdges[vertexIndex].v2.index;
     }
 
     public boolean merge(Route r2, BasicEdge mergingEdge)
     {
 
-        int from = mergingEdge.n1.index;
-        int to = mergingEdge.n2.index;
+        int from = mergingEdge.v1.index;
+        int to = mergingEdge.v2.index;
 
         int predecessorI = this.predecessor(from);
         int predecessorJ = r2.predecessor(to);
@@ -91,13 +92,13 @@ public class Route
 
         if (successorI == 0 && predecessorJ == 0)
         {
-            this.removeEdgeToNode(0);
-            r2.removeEdgeFromNode(0);
+            this.removeEdgeToVertex(0);
+            r2.removeEdgeFromVertex(0);
             for (BasicEdge e : r2.edges)
             {
                 this.add(e);
             }
-            this.actual += r2.actual;
+            this.currentWeight += r2.currentWeight;
             this.add(mergingEdge);
             return true;
             // option two
@@ -108,13 +109,13 @@ public class Route
         else if (successorJ == 0 && predecessorI == 0)
         {
             mergingEdge.reverse();
-            this.removeEdgeFromNode(0);
-            r2.removeEdgeToNode(0);
+            this.removeEdgeFromVertex(0);
+            r2.removeEdgeToVertex(0);
             for (BasicEdge e : r2.edges)
             {
                 this.add(e);
             }
-            this.actual += r2.actual;
+            this.currentWeight += r2.currentWeight;
             this.add(mergingEdge);
             return true;
         }

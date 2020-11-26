@@ -1,15 +1,10 @@
-import algorithms.ClarkAndWright.program.VRPProgram;
+import algorithms.ClarkAndWright.ClarkAndWright;
 import common.Edge.BasicEdge;
 import common.Vertex.BasicVertex;
 import org.jgrapht.*;
-import org.jgrapht.alg.interfaces.SpanningTreeAlgorithm;
 import org.jgrapht.graph.*;
 import org.jgrapht.nio.*;
-import org.jgrapht.nio.dot.*;
-import org.jgrapht.traverse.*;
-import org.jgrapht.alg.spanning.*;
 
-import java.io.*;
 import java.net.*;
 import java.util.*;
 
@@ -17,7 +12,7 @@ import java.util.*;
 public final class Program
 {
 
-    public static void main(String[] args) throws URISyntaxException, ExportException
+    public static void main(String[] args) throws ExportException
     {
         Graph<BasicVertex, BasicEdge> weightedBasicGraph = createWeightedBasicGraph();
 
@@ -25,7 +20,7 @@ public final class Program
         System.out.println(weightedBasicGraph.toString());
         System.out.println();
 
-        VRPProgram vrp = new VRPProgram();
+        ClarkAndWright vrp = new ClarkAndWright();
         vrp.loadDataBasic(weightedBasicGraph);
         System.out.println(vrp.clarkWright());
 
