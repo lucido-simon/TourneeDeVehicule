@@ -12,7 +12,7 @@ import org.jgrapht.Graph;
 public class ClarkAndWright
 {
 
-    public static int CAR_LIMIT = 10;
+    public static int weightLimit = 10;
     private static double[][] savings;
     public static double[][] distances;
     private static BasicVertex[] vertices;
@@ -55,7 +55,7 @@ public class ClarkAndWright
                 BasicEdge e2 = new BasicEdge(n, vertices[0], distances[0][n.index]);
 
                 Route r = new Route(vertices.length);
-                r.weightLimit = CAR_LIMIT;
+                r.weightLimit = weightLimit;
                 r.add(e);
                 r.add(e2);
                 r.currentWeight += n.weight;

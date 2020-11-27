@@ -2,6 +2,8 @@ package common.Vertex;
 
 import common.Route.Route;
 
+import java.util.BitSet;
+
 public class BasicVertex
 {
     public int index;
@@ -9,7 +11,7 @@ public class BasicVertex
     public int weight;
     public Route route;
 
-
+    public BasicVertex(){}
 
     public BasicVertex(int i, String name, int weight)
     {

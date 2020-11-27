@@ -2,15 +2,15 @@ package common.Edge;
 
 import common.Vertex.BasicVertex;
 
-public class BasicEdge implements Comparable<BasicEdge>
+public class BasicEdge<T extends BasicVertex> implements Comparable<BasicEdge>
 {
-    public BasicVertex v1;
-    public BasicVertex v2;
+    public T v1;
+    public T v2;
 
     public double cost;
 
 
-    public BasicEdge(BasicVertex ln1, BasicVertex ln2, double dist)
+    public BasicEdge(T ln1, T ln2, double dist)
     {
         this.v1 = ln1;
         this.v2 = ln2;
@@ -19,7 +19,7 @@ public class BasicEdge implements Comparable<BasicEdge>
 
     public void reverse()
     {
-        BasicVertex swap = this.v2;
+        T swap = this.v2;
         this.v2 = v1;
         this.v1 = swap;
     }
