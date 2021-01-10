@@ -33,7 +33,6 @@ public class ClarkAndWright
             distances[be.v1.index][be.v2.index] = be.cost;
             System.out.println(be.cost);
         }
-
     }
 
     public static String clarkWright()

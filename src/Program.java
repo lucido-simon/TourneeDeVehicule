@@ -1,3 +1,4 @@
+import algorithms.BranchAndBound.BranchAndBound;
 import algorithms.ClarkAndWright.ClarkAndWright;
 import common.Edge.BasicEdge;
 import common.Vertex.BasicVertex;
@@ -21,12 +22,16 @@ public final class Program
         System.out.println();
 
         ClarkAndWright vrp = new ClarkAndWright();
-        vrp.loadDataBasic(weightedBasicGraph);
+            vrp.loadDataBasic(weightedBasicGraph);
         System.out.println(vrp.clarkWright());
 
    /*     PrimMinimumSpanningTree<String, DefaultWeightedEdge> tree = new PrimMinimumSpanningTree<>(stringWeightedGraph);
         SpanningTreeAlgorithm.SpanningTree<DefaultWeightedEdge> tree2 = tree.getSpanningTree();
         System.out.println(tree2.toString());*/
+        System.out.println("-- Branch and Bound --");
+        BranchAndBound test = new BranchAndBound();
+        test.loadDataBasic(weightedBasicGraph);
+        test.BranchBound();
 
     }
 
@@ -57,10 +62,11 @@ public final class Program
                     double weight = 1.d + r.nextDouble() * 9.d;
                     g.addEdge(vertices.get(i), vertices.get(j), new BasicEdge(vertices.get(i), vertices.get(j), weight));
                     g.setEdgeWeight(vertices.get(i), vertices.get(j), weight );
+                    System.out.println("Distance du point " + vertices.get(i) + " au point " + vertices.get(j) + " = " + (int)weight + " ");
                 }
 
             }
-
+            System.out.println("");
         }
 
         return g;
