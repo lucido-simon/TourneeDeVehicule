@@ -6,23 +6,13 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45c07d24-11f8-4fc9-b442-5704822729a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/algorithms/BranchAndBound/BranchAndBound.java" afterDir="false" />
+    <list default="true" id="9ae4cc5b-4b0b-4101-abc1-0b918151a1ec" name="Default Changelist" comment="trucs pas ouf dans le package testalgorithm : &#10;La méthode renvoie les chemins les plus courts entre le dépot et chaque destination.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/algorithms/ClarkAndWright/ClarkAndWright.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/ClarkAndWright/ClarkAndWright.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1mqnMxWSuWiEqgwzick5HvoXIXc" />
+  <component name="ProjectId" id="1kjwQ19sMeeN2uw9ZpcVkTcoXf6" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -48,12 +38,26 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Program">
+    <configuration name="HelloJGraphT" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HelloJGraphT" />
+      <module name="TourneeDeVehicule" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Program" />
       <module name="TourneeDeVehicule" />
+      <option name="PROGRAM_PARAMETERS" value="chemin.dot BB" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -69,22 +73,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.HelloJGraphT" />
+      <item itemvalue="Application.Program" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Program" />
+        <item itemvalue="Application.HelloJGraphT" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="45c07d24-11f8-4fc9-b442-5704822729a0" name="Default Changelist" comment="" />
-      <created>1610229944179</created>
+      <changelist id="9ae4cc5b-4b0b-4101-abc1-0b918151a1ec" name="Default Changelist" comment="" />
+      <created>1606227289233</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1610229944179</updated>
-      <workItem from="1610229945202" duration="12754000" />
+      <updated>1606227289233</updated>
+      <workItem from="1606227290382" duration="6266000" />
+      <workItem from="1606300287656" duration="78000" />
+      <workItem from="1610227992665" duration="1007000" />
+      <workItem from="1610530271237" duration="1884000" />
+      <workItem from="1610546098736" duration="108000" />
+      <workItem from="1610546218530" duration="2529000" />
     </task>
+    <task id="LOCAL-00001" summary="trucs pas ouf dans le package testalgorithm : &#10;La méthode renvoie les chemins les plus courts entre le dépot et chaque destination.">
+      <created>1606233261046</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606233261047</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,23 +122,56 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="trucs pas ouf dans le package testalgorithm : &#10;La méthode renvoie les chemins les plus courts entre le dépot et chaque destination." />
+    <option name="LAST_COMMIT_MESSAGE" value="trucs pas ouf dans le package testalgorithm : &#10;La méthode renvoie les chemins les plus courts entre le dépot et chaque destination." />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="269" key="GridCell.Tab.0.bottom" timestamp="1610245571615">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="223" y="67" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610548768728">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1877" height="269" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610245571615" />
-    <state width="1877" height="269" key="GridCell.Tab.0.center" timestamp="1610245571615">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="223" y="67" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1610548768728" />
+    <state x="548" y="129" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1610531536876">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1877" height="269" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610245571615" />
-    <state width="1877" height="269" key="GridCell.Tab.0.left" timestamp="1610245571615">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="548" y="129" key="#com.intellij.ide.macro.MacrosDialog/0.0.1536.824@0.0.1536.824" timestamp="1610531536876" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1610548746880">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1877" height="269" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610245571615" />
-    <state width="1877" height="269" key="GridCell.Tab.0.right" timestamp="1610245571615">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610548746880" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1610548746880">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1877" height="269" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610245571615" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610548746880" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1610548746879">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610548746879" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1610548746880">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610548746880" />
+    <state x="407" y="174" key="MultipleFileMergeDialog" timestamp="1610228017303">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1610228017302" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610547032973">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1610547032973" />
+    <state x="478" y="0" width="579" height="824" key="find.popup" timestamp="1606232911408">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="478" y="0" width="579" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1606232911408" />
+    <state x="209" y="33" key="new project wizard" timestamp="1610546133378">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1610546133378" />
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1610548466288">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1610548466288" />
   </component>
 </project>

@@ -15,6 +15,36 @@ public final class Program
 
     public static void main(String[] args) throws ExportException
     {
+        /*
+        Pour lancer le programme avec des arguments : Run -> Edit Configurations -> case "Program Arguments"
+        Le format est le suivant : "arg1 arg2"
+        Exemple : "chemin.dot Sweep"
+        */
+
+        // Vérifie qu'il y ait bien 2 arguments (ni plus, ni moins) et envoie un message d'erreur si ce n'est pas le cas.
+        if (args.length != 2){
+            System.out.println("Le nombre d'arguments est incorrect. Veuillez entrer le chemin du fichier d'extension \"dot\" contenant le graphe ainsi que la méthode voulant être utilisée (CW, BB où Sweep).");
+        }
+
+        // S'il y a bien 2 arguments
+        else {
+            System.out.println("Chemin vers le fichier : " + args[0]); // Chemin vers le fichier = args[0]
+            switch (args[1]){
+                case "CW" :
+                    System.out.println("Clark and Wright");
+                    break;
+                case "BB" :
+                    System.out.println("Breach and Bound");
+                    break;
+                case "Sweep" :
+                    System.out.println("Sweep");
+                    break;
+                default :
+                    System.out.println("La méthode choisie (" + args[1] + ") n'a pas été reconnue.");
+            }
+        }
+
+
         Graph<BasicVertex, BasicEdge> weightedBasicGraph = createWeightedBasicGraph();
 
         System.out.println("-- toString output");
@@ -22,12 +52,13 @@ public final class Program
         System.out.println();
 
         ClarkAndWright vrp = new ClarkAndWright();
-            vrp.loadDataBasic(weightedBasicGraph);
+        vrp.loadDataBasic(weightedBasicGraph);
         System.out.println(vrp.clarkWright());
 
-   /*     PrimMinimumSpanningTree<String, DefaultWeightedEdge> tree = new PrimMinimumSpanningTree<>(stringWeightedGraph);
+        /*PrimMinimumSpanningTree<String, DefaultWeightedEdge> tree = new PrimMinimumSpanningTree<>(stringWeightedGraph);
         SpanningTreeAlgorithm.SpanningTree<DefaultWeightedEdge> tree2 = tree.getSpanningTree();
         System.out.println(tree2.toString());*/
+
         System.out.println("-- Branch and Bound --");
         BranchAndBound test = new BranchAndBound();
         test.loadDataBasic(weightedBasicGraph);
