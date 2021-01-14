@@ -11,7 +11,7 @@ import java.util.Collections;
 
 public class Sweep
 {
-    public static int CAR_LIMIT = 18;
+    public static int CAR_LIMIT = 100;
     public static double[][] distances;
     private static SweepVertex[] vertices;
 
