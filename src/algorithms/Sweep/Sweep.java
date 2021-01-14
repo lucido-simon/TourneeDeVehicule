@@ -11,7 +11,7 @@ import java.util.Collections;
 
 public class Sweep
 {
-    public static int CAR_LIMIT = 40;
+    public static int CAR_LIMIT = 18;
     public static double[][] distances;
     private static SweepVertex[] vertices;
 
@@ -28,7 +28,6 @@ public class Sweep
         for ( SweepEdge be : edges )
         {
             distances[be.v1.index][be.v2.index] = be.cost;
-            System.out.println(be.cost);
         }
     }
 
@@ -87,8 +86,12 @@ public class Sweep
 
         for (int i = 0; i < clusterCount; i++)
         {
-            //System.out.println("Cluster: " + clusters.get(i).weight);
             clusters.get(i).mst();
+
+            StringBuilder str = new StringBuilder();
+            clusters.get(i).printMST(str);
+
+
             //clusters.get(i).printMST();
             clusters.get(i).dfsONMST();
             clusters.get(i).printTSP(sb);

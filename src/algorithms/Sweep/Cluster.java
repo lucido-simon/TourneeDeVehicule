@@ -39,7 +39,6 @@ public class Cluster
 
     public void printMST(StringBuilder sb)
     {
-        System.out.println("CLUSTER:");
         for (BasicEdge e : mstE)
         {
             sb.append("From: " + e.v1.index + " To: " + e.v2.index + " Val: " + e.cost);
@@ -63,13 +62,12 @@ public class Cluster
             {
 
                 BasicEdge<SweepVertex> e = edges.get(counter);
-                if (e.v1.visited && e.v2.visited)
+                if ( !e.v2.visited  && e.v1.visited )
                 {
-                    //||(e.v2.visited == true && e.v1.visited == false)){
                     mstE.add(e);
-                    //e.v1.visited = true;
+                    e.v1.visited = true;
                     e.v2.visited = true;
-                    //pridam do MST hran, ktere tvori kostru
+                    //ajoute au MST les edges qui composent le squelette
                     if (e.v1.mstEdges == null)
                     {
                         e.v1.mstEdges = new ArrayList<>();
@@ -81,6 +79,8 @@ public class Cluster
                 counter++;
             }
         }
+
+
     }
 
     public void dfsONMST()
@@ -106,7 +106,6 @@ public class Cluster
 
     public void printTSP(StringBuilder sb)
     {
-        //System.out.println("CLUSTER TSP:");
         for (SweepVertex n : tsp)
         {
             sb.append(n.index + " ");

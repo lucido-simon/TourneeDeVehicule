@@ -20,11 +20,11 @@ public final class Program
 
     public static void main(String[] args) throws ExportException
     {
-/*        *//*
+        /*
         Pour lancer le programme avec des arguments : Run -> Edit Configurations -> case "Program Arguments"
         Le format est le suivant : "arg1 arg2"
         Exemple : "chemin.dot Sweep"
-        *//*
+        */
 
         // Vérifie qu'il y ait bien 2 arguments (ni plus, ni moins) et envoie un message d'erreur si ce n'est pas le cas.
         if (args.length != 2){
@@ -33,69 +33,30 @@ public final class Program
 
         // S'il y a bien 2 arguments
         else {
-            System.out.println("Chemin vers le fichier : " + args[0]); // Chemin vers le fichier = args[0]
             switch (args[1]){
                 case "CW" :
-                    System.out.println("Clark and Wright");
+                    Graph<BasicVertex, BasicEdge> weightedBasicGraph = new SimpleWeightedGraph<>(BasicEdge.class);
+                    LoadFromFile.importFromFile(args[0], weightedBasicGraph);
+                    ClarkAndWright.loadDataBasic(weightedBasicGraph);
+                    System.out.println(ClarkAndWright.clarkWright());
                     break;
                 case "BB" :
-                    System.out.println("Breach and Bound");
+                    Graph<BasicVertex, BasicEdge> basicGraph = new SimpleWeightedGraph<>(BasicEdge.class);
+                    LoadFromFile.importFromFile(args[0], basicGraph);
+                    BranchAndBound.loadDataBasic(basicGraph);
+                    BranchAndBound.BranchBound();
                     break;
                 case "Sweep" :
-                    System.out.println("Sweep");
+                    Graph<SweepVertex, SweepEdge> sweepGraph = new DefaultUndirectedWeightedGraph<>(SweepEdge.class);
+                    LoadFromFile.importFromFileSweep(args[0], sweepGraph);
+                    Sweep.loadData(sweepGraph);
+                    System.out.println(Sweep.sweep());
                     break;
                 default :
                     System.out.println("La méthode choisie (" + args[1] + ") n'a pas été reconnue.");
             }
-        }*/
-
-
-/*        Graph<BasicVertex, BasicEdge> weightedBasicGraph = new SimpleWeightedGraph<>(BasicEdge.class);
-        LoadFromFile.importFromFile("C:\\Users\\Simon\\Desktop\\Java\\TourneeDeVehicule2\\src\\common\\GraphReader\\test.dot", weightedBasicGraph);
-
-        System.out.println("-- toString output");
-        System.out.println(weightedBasicGraph.toString());
-        System.out.println();
-
-        Set<BasicVertex> vertices = weightedBasicGraph.vertexSet();
-        Set<BasicEdge> edges = weightedBasicGraph.edgeSet();
-
-        for ( BasicVertex bv : vertices )
-            System.out.println(bv.index + " " + bv.name + " " + bv.weight);
-
-        for ( BasicEdge be : edges )
-        {
-            System.out.println(be.v1.name + "->" + be.v2.name + be.cost + " " + weightedBasicGraph.getEdgeWeight(be));
-        }*/
-
-        /*ClarkAndWright vrp = new ClarkAndWright();
-        vrp.loadDataBasic(weightedBasicGraph);
-        System.out.println(vrp.clarkWright());*/
-
-        Graph<SweepVertex, SweepEdge> sweepGraph = new DefaultUndirectedWeightedGraph<>(SweepEdge.class);
-        LoadFromFile.importFromFileSweep("C:\\Users\\Simon\\Desktop\\Java\\TourneeDeVehicule2\\src\\common\\GraphReader\\test.dot", sweepGraph);
-
-        ArrayList<SweepVertex> vertices = new ArrayList<>(sweepGraph.vertexSet());
-        ArrayList<SweepEdge> edges = new ArrayList<>(sweepGraph.edgeSet());
-
-        for ( SweepVertex bv : vertices )
-            System.out.println(bv.index + " " + bv.name + " " + bv.weight);
-
-        for ( SweepEdge be : edges )
-        {
-            System.out.println(be.v1.name + "->" + be.v2.name + be.cost + " " + sweepGraph.getEdgeWeight(be));
         }
 
-
-        Sweep sweep = new Sweep();
-        Sweep.loadData(sweepGraph);
-        System.out.println(Sweep.sweep());
-
-
-        /*System.out.println("-- Branch and Bound --");
-        BranchAndBound test = new BranchAndBound();
-        test.loadDataBasic(weightedBasicGraph);
-        test.BranchBound();*/
 
     }
 
@@ -126,7 +87,6 @@ public final class Program
                     double weight = 1.d + r.nextDouble() * 9.d;
                     g.addEdge(vertices.get(i), vertices.get(j), new BasicEdge(vertices.get(i), vertices.get(j), weight));
                     g.setEdgeWeight(vertices.get(i), vertices.get(j), weight );
-                    //System.out.println("Distance du point " + vertices.get(i) + " au point " + vertices.get(j) + " = " + (int)weight + " ");
                 }
 
             }

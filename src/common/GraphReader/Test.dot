@@ -1,0 +1,46 @@
+digraph D {
+
+    A[cost="8" xpos="10" ypos="5"];
+    B[cost="10" xpos="10" ypos="8"];
+    C[cost="3" xpos="2" ypos="10"];
+    D[cost="6" xpos="1" ypos="2"];
+    E[cost="7" xpos="5" ypos="6"];
+    F[cost="10" xpos="6" ypos="5"];
+    G[cost="2" xpos="8" ypos="12"];
+
+    A -> B[weight="3.0"];
+    B -> A[weight="3.0"];
+    A -> C[weight="9.434"];
+    C -> A[weight="9.434"];
+    A -> D[weight="9.487"];
+    D -> A[weight="9.487"];
+    A -> E[weight="5.01"];
+    E -> A[weight="5.01"];
+    A -> F[weight="4.0"];
+    F -> A[weight="4.0"];
+    A -> G[weight="7.28"];
+    G -> A[weight="7.28"];
+    B -> C[weight="8.246"];
+    C -> B[weight="8.246"];
+    B -> D[weight="10.817"];
+    D -> B[weight="10.817"];
+    B -> E[weight="5.385"];
+    E -> B[weight="5.385"];
+    B -> G[weight="4.472"];
+    G -> B[weight="4.472"];
+    C -> D[weight="8.062"];
+    D -> C[weight="8.062"];
+    C -> F[weight="6.403"];
+    F -> C[weight="6.403"];
+    C -> G[weight="6.325"];
+    G -> C[weight="6.325"];
+    D -> E[weight="5.657"];
+    E -> D[weight="5.657"];
+    D -> F[weight="5.831"];
+    F -> D[weight="5.831"];
+    D -> G[weight="12.206"];
+    G -> D[weight="12.206"];
+    E -> G[weight="6.709"];
+    G -> E[weight="6.709"];
+
+}

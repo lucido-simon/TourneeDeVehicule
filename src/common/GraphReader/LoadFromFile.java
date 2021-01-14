@@ -66,7 +66,6 @@ public class LoadFromFile
 
                     BasicVertex bv = new BasicVertex(index, nom, Integer.parseInt(cout));
 
-                    //System.out.println("nom:" + bv.name );
 
                     vertices.add(bv);
                     g.addVertex(bv);
@@ -89,7 +88,6 @@ public class LoadFromFile
 
                     for (BasicVertex b: vertices )
                     {
-                        System.out.println(b.name);
                         if ( b.name.equals(vertexSourceString) )
                             source = b;
                         if ( b.name.equals(vertexTargetString) )

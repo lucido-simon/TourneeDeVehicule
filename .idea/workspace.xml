@@ -11,28 +11,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45c07d24-11f8-4fc9-b442-5704822729a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/common/Edge/SweepEdge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/GraphReader/LoadFromFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/GraphReader/Sweep.dot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/GraphReader/Test.dot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/production/TourneeDeVehicule/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/TourneeDeVehicule/Program.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/TourneeDeVehicule/algorithms/BranchAndBound/BranchAndBound.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/TourneeDeVehicule/algorithms/BranchAndBound/BranchAndBound.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/production/TourneeDeVehicule/algorithms/ClarkAndWright/ClarkAndWright.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/TourneeDeVehicule/algorithms/ClarkAndWright/ClarkAndWright.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/TourneeDeVehicule/algorithms/ClarkAndWright/ClarkAndWrightUtilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/TourneeDeVehicule/algorithms/ClarkAndWright/ClarkAndWrightUtilities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/TourneeDeVehicule/algorithms/ClarkAndWright/Saving.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/TourneeDeVehicule/algorithms/ClarkAndWright/Saving.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/production/TourneeDeVehicule/algorithms/Sweep/Cluster.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/TourneeDeVehicule/algorithms/Sweep/Cluster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/TourneeDeVehicule/algorithms/Sweep/MyUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/TourneeDeVehicule/algorithms/Sweep/MyUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/production/TourneeDeVehicule/algorithms/Sweep/Sweep.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/TourneeDeVehicule/algorithms/Sweep/Sweep.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/TourneeDeVehicule/common/Edge/BasicEdge.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/TourneeDeVehicule/common/Edge/BasicEdge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/TourneeDeVehicule/common/Route/Route.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/TourneeDeVehicule/common/Route/Route.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/TourneeDeVehicule/common/Vertex/BasicVertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/TourneeDeVehicule/common/Vertex/BasicVertex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/TourneeDeVehicule/common/Vertex/SweepVertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/TourneeDeVehicule/common/Vertex/SweepVertex.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/algorithms/BranchAndBound/BranchAndBound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/BranchAndBound/BranchAndBound.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/algorithms/ClarkAndWright/ClarkAndWright.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/ClarkAndWright/ClarkAndWright.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/algorithms/Sweep/Cluster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/Sweep/Cluster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/algorithms/Sweep/Sweep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/Sweep/Sweep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Edge/BasicEdge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Edge/BasicEdge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Vertex/SweepVertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Vertex/SweepVertex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/GraphReader/LoadFromFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/GraphReader/LoadFromFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/GraphReader/test.dot" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,42 +39,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/GraphReader/LoadFromFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="230" column="25" selection-start-line="230" selection-start-column="25" selection-end-line="230" selection-end-column="25" />
+            <state relative-caret-position="158">
+              <caret line="89" column="21" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#importFromFile#0;class#LoadFromFile#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/common/Edge/BasicEdge.java">
+        <entry file="file://$PROJECT_DIR$/src/algorithms/Sweep/Cluster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="158">
+              <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/common/GraphReader/Sweep.dot">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="33" selection-end-line="28" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/algorithms/Sweep/Cluster.java">
+        <entry file="file://$PROJECT_DIR$/src/common/GraphReader/Test.dot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="70" column="35" lean-forward="true" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/common/GraphReader/test.dot">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+            <state relative-caret-position="153">
+              <caret line="9" lean-forward="true" selection-end-line="45" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -91,29 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Program.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/common/Edge/SweepEdge.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-              <folding>
-                <element signature="e#222#223#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/algorithms/BranchAndBound/BranchAndBound.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1934">
-              <caret line="208" column="17" lean-forward="true" selection-start-line="208" selection-start-column="17" selection-end-line="208" selection-end-column="17" />
+            <state relative-caret-position="186">
+              <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -121,8 +87,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/algorithms/ClarkAndWright/ClarkAndWright.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+            <state relative-caret-position="1717">
+              <caret line="110" column="28" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/algorithms/Sweep/MyUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="17" column="11" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/algorithms/BranchAndBound/BranchAndBound.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="26" column="45" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -130,8 +114,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/Vertex/SweepVertex.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="74" column="22" lean-forward="true" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+            <state relative-caret-position="221">
+              <caret line="15" column="53" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="53" />
               <folding>
                 <element signature="e#513#514#0" expanded="true" />
                 <element signature="e#536#537#0" expanded="true" />
@@ -143,8 +127,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/algorithms/Sweep/Sweep.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="90" column="31" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="31" />
+            <state relative-caret-position="158">
+              <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -165,6 +149,9 @@
     <findStrings>
       <find>loadData</find>
       <find>BasicEdge</find>
+      <find>mst</find>
+      <find>Sys</find>
+      <find>Syst</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -173,21 +160,22 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/algorithms/ClarkAndWright/ClarkAndWright.java" />
-        <option value="$PROJECT_DIR$/src/common/GraphReader/test.dot" />
         <option value="$PROJECT_DIR$/src/common/Edge/SweepEdge.java" />
-        <option value="$PROJECT_DIR$/src/algorithms/Sweep/Cluster.java" />
         <option value="$PROJECT_DIR$/src/algorithms/BranchAndBound/BranchAndBound.java" />
-        <option value="$PROJECT_DIR$/src/Program.java" />
-        <option value="$PROJECT_DIR$/src/common/GraphReader/LoadFromFile.java" />
+        <option value="$PROJECT_DIR$/src/common/GraphReader/test.dot" />
+        <option value="$PROJECT_DIR$/src/common/GraphReader/Test.dot" />
         <option value="$PROJECT_DIR$/src/algorithms/Sweep/Sweep.java" />
+        <option value="$PROJECT_DIR$/src/algorithms/Sweep/Cluster.java" />
+        <option value="$PROJECT_DIR$/src/Program.java" />
+        <option value="$PROJECT_DIR$/src/algorithms/ClarkAndWright/ClarkAndWright.java" />
+        <option value="$PROJECT_DIR$/src/common/GraphReader/LoadFromFile.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="693" />
-    <option name="y" value="-22" />
-    <option name="width" value="976" />
+    <option name="x" value="-1928" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectId" id="1kjwQ19sMeeN2uw9ZpcVkTcoXf6" />
@@ -317,7 +305,7 @@
     <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Program" />
       <module name="TourneeDeVehicule" />
-      <option name="PROGRAM_PARAMETERS" value="chemin.dot BB" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Users\Simon\Desktop\Java\TourneeDeVehicule2\src\common\GraphReader\Sweep.dot CW" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -358,17 +346,31 @@
       <option name="project" value="LOCAL" />
       <updated>1606233261047</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fonctions de lecture depuis un fichier">
+      <created>1610590012446</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1610590012446</updated>
+    </task>
+    <task id="LOCAL-00003" summary="test.dot">
+      <created>1610590069937</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1610590069937</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15636000" />
+    <option name="totallyTimeSpent" value="21131000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26012793" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26012793" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -377,7 +379,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3445287" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3445287" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -467,7 +469,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="trucs pas ouf dans le package testalgorithm : &#10;La méthode renvoie les chemins les plus courts entre le dépot et chaque destination." />
-    <option name="LAST_COMMIT_MESSAGE" value="trucs pas ouf dans le package testalgorithm : &#10;La méthode renvoie les chemins les plus courts entre le dépot et chaque destination." />
+    <MESSAGE value="Fonctions de lecture depuis un fichier" />
+    <MESSAGE value="test.dot" />
+    <option name="LAST_COMMIT_MESSAGE" value="test.dot" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610548768728">
@@ -530,20 +534,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/GraphReader/test.dot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithms/ClarkAndWright/ClarkAndWright.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/Edge/SweepEdge.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -554,16 +544,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithms/BranchAndBound/BranchAndBound.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1934">
-          <caret line="208" column="17" lean-forward="true" selection-start-line="208" selection-start-column="17" selection-end-line="208" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/Edge/BasicEdge.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
+        <state relative-caret-position="523">
           <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -571,28 +554,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/GraphReader/LoadFromFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="230" column="25" selection-start-line="230" selection-start-column="25" selection-end-line="230" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#importFromFile#0;class#LoadFromFile#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Program.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/Vertex/SweepVertex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="74" column="22" lean-forward="true" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+        <state relative-caret-position="221">
+          <caret line="15" column="53" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="53" />
           <folding>
             <element signature="e#513#514#0" expanded="true" />
             <element signature="e#536#537#0" expanded="true" />
@@ -600,10 +565,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithms/BranchAndBound/BranchAndBound.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="26" column="45" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/algorithms/Sweep/Sweep.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="90" column="31" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="31" />
+        <state relative-caret-position="158">
+          <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -612,8 +584,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/algorithms/Sweep/Cluster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="70" column="35" lean-forward="true" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+        <state relative-caret-position="158">
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithms/Sweep/MyUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Program.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/GraphReader/Sweep.dot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="33" selection-end-line="28" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithms/ClarkAndWright/ClarkAndWright.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1717">
+          <caret line="110" column="28" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/GraphReader/LoadFromFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="89" column="21" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/GraphReader/Test.dot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-end-line="45" selection-end-column="1" />
         </state>
       </provider>
     </entry>

@@ -31,7 +31,6 @@ public class ClarkAndWright
         for ( BasicEdge be : edges )
         {
             distances[be.v1.index][be.v2.index] = be.cost;
-            System.out.println(be.cost);
         }
     }
 
@@ -110,7 +109,6 @@ public class ClarkAndWright
             }
 
             sList.remove(0);
-            //ClarkAndWrightUtilities.printRoutes(routes);
 
         }
         StringBuilder sb = new StringBuilder();
