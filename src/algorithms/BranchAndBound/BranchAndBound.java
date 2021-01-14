@@ -8,7 +8,8 @@ import org.jgrapht.Graph;
 import java.util.*;
 
 
-public class BranchAndBound {
+public class BranchAndBound
+{
 
 
     static int N = 7;
@@ -185,13 +186,17 @@ public class BranchAndBound {
         adj = new int[N][N];
 
 
-        for ( int i = 0; i < N ; i++) {
-            for (int j = 0; j < N; j++) {
+        for ( int i = 0; i < N ; i++)
+        {
+            for (int j = 0; j < N; j++)
+            {
                 if ( i == j ){
                     adj[i][j] = 0;
                 }
                 else {
-                    adj[i][j] = (int)g.getEdge(vertices.get(i),vertices.get(j)).cost;
+                    BasicEdge be = g.getEdge(vertices.get(i),vertices.get(j));
+                    if ( be == null ) adj[i][j] = 999999999;
+                    else adj[i][j] = (int)be.cost;
                 }
                 //System.out.println("Distance du point " + vertices.get(i) + " au point " + vertices.get(j) + " = " + adj[i][j] + " ");
             }

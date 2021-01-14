@@ -55,11 +55,11 @@ public class Cluster
         int visitedSweepVertexs = 1;
         Collections.sort(edges);
 
-        while (visitedSweepVertexs != nodes.size())
+        while (visitedSweepVertexs != nodes.size() )
         {
             boolean added = false;
             int counter = 0;
-            while (!added)
+            while (!added )
             {
 
                 BasicEdge<SweepVertex> e = edges.get(counter);

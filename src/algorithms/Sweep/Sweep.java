@@ -1,6 +1,7 @@
 package algorithms.Sweep;
 
 import common.Edge.BasicEdge;
+import common.Edge.SweepEdge;
 import common.Vertex.SweepVertex;
 import org.jgrapht.Graph;
 
@@ -14,17 +15,17 @@ public class Sweep
     public static double[][] distances;
     private static SweepVertex[] vertices;
 
-    public static void loadData(Graph<SweepVertex, BasicEdge<SweepVertex>> g)
+    public static void loadData(Graph<SweepVertex, SweepEdge> g)
     {
         ArrayList<SweepVertex> al = new ArrayList<>(g.vertexSet());
         vertices = al.toArray(new SweepVertex[g.vertexSet().size()]);
 
-        ArrayList<BasicEdge<SweepVertex>> edges = new ArrayList<>(g.edgeSet());
+        ArrayList<SweepEdge> edges = new ArrayList<>(g.edgeSet());
 
 
         distances = new double[vertices.length][vertices.length];
 
-        for ( BasicEdge be : edges )
+        for ( SweepEdge be : edges )
         {
             distances[be.v1.index][be.v2.index] = be.cost;
             System.out.println(be.cost);
@@ -40,38 +41,38 @@ public class Sweep
         //Cluster
         Cluster actualCluster = new Cluster();
 
-        ArrayList<Cluster> clusters = new ArrayList<Cluster>();
+        ArrayList<Cluster> clusters = new ArrayList<>();
 
-        //pridam 0 do clusteru
+        // ajoute 0 au cluster
         actualCluster.add(vertices[0]);
         for (int i = 0; i < verticesWithoutDepot.size(); i++)
         {
             SweepVertex n = verticesWithoutDepot.get(i);
 
-            //pokud by byla prekrocena kapacita vytvorim novy cluster
+            // si la capacité est dépassée on fait un nouveau cluster
             if (actualCluster.weight + n.weight > CAR_LIMIT)
             {
                 clusters.add(actualCluster);
                 actualCluster = new Cluster();
-                //pridam depot uzel do kazdeho clusteru
+                // ajoute le dépôt à chaque cluster
                 actualCluster.add(vertices[0]);
             }
 
-            //pridam uzel do clusteru
-            //pridam vsechny hrany ktere inciduji s uzly ktere jiz jsou v clusteru
+            // ajoute le nœud au cluster
+            // ajoute tous les bords que ya avec des nœuds qui sont déjà dans le cluster
             actualCluster.add(n);
             for (int j = 0; j < actualCluster.nodes.size(); j++)
             {
                 SweepVertex nIn = actualCluster.nodes.get(j);
-                BasicEdge<SweepVertex> e = new BasicEdge<>(nIn, n, distances[nIn.index][n.index]);
+                SweepEdge e = new SweepEdge(nIn, n, distances[nIn.index][n.index]);
 
-                BasicEdge<SweepVertex> eReverse = new BasicEdge<>(n, nIn, distances[n.index][nIn.index]);
+                SweepEdge eReverse = new SweepEdge(n, nIn, distances[n.index][nIn.index]);
 
                 actualCluster.edges.add(e);
                 actualCluster.edges.add(eReverse);
             }
 
-            //v pripade posledni polozky musim pridat i cluster.
+            //dans le cas du dernier élément, je dois ajouter un cluster.
             if (i == verticesWithoutDepot.size() - 1)
             {
                 clusters.add(actualCluster);

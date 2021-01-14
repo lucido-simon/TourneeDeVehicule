@@ -1,6 +1,7 @@
 package common.Edge;
 
 import common.Vertex.BasicVertex;
+import common.Vertex.SweepVertex;
 
 public class BasicEdge<T extends BasicVertex> implements Comparable<BasicEdge>
 {
@@ -9,6 +10,9 @@ public class BasicEdge<T extends BasicVertex> implements Comparable<BasicEdge>
 
     public double cost;
 
+    public BasicEdge()
+    {
+    }
 
     public BasicEdge(T ln1, T ln2, double dist)
     {
@@ -27,6 +31,8 @@ public class BasicEdge<T extends BasicVertex> implements Comparable<BasicEdge>
     @Override
     public String toString()
     {
+        if ( v1 == null || v2 == null )
+            return "null";
         return v1.name + v2.name;
     }
 

@@ -12,7 +12,7 @@ import org.jgrapht.Graph;
 public class ClarkAndWright
 {
 
-    public static int weightLimit = 10;
+    public static int weightLimit = 18;
     private static double[][] savings;
     public static double[][] distances;
     private static BasicVertex[] vertices;

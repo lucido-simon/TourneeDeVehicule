@@ -20,6 +20,11 @@ public class SweepVertex extends BasicVertex implements Comparable<SweepVertex>
     /**
      * @param depot Donner null en paramètre si la Vertex qu'on essaie de créer est le dépot
      */
+    public SweepVertex()
+    {
+        super();
+    }
+
     public SweepVertex(int i, String name, int weight, double x, double y, SweepVertex depot)
     {
         super(i, name, weight);
